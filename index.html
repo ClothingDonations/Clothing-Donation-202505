@@ -3,61 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clothing Donation Form</title>
+  <title>Clothes Donation Form</title>
+  <br>Thank you for stepping small step on improving society<br>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial;
-      background: #f4f4f4;
-      padding: 20px;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
     }
+
     form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
       max-width: 500px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease;
     }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
     input, select, textarea {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
     }
+
+    label {
+      font-weight: 500;
+      margin-top: 10px;
+      display: block;
+      color: #444;
+    }
+
     button {
       background: #4CAF50;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
       cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+      transition: background 0.3s ease;
     }
+
     button:hover {
       background: #45a049;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
-  <h2 style="text-align:center;">Donate Your Clothes</h2>
   <form action="https://formsubmit.co/hdmcwebsiteproject@gmail.com" method="POST" enctype="multipart/form-data">
-    
-    <!-- Redirect to thank you page after submission -->
-    <input type="hidden" name="_next" value="https://clothes-donation-202505.netlify.app/thankyou.html" />
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://6826ae5609ad3171578282da--clothes-donation-202505.netlify.app/thankyou.html" />
 
-    <!-- Form Fields -->
+    <h2>Donate Your Clothes</h2>
+
     <input type="text" name="name" placeholder="Your Name" required />
-    <textarea name="address" placeholder="Your Address" required></textarea>
-    
+    <textarea name="address" placeholder="Your Address" rows="4" required></textarea>
+
     <label>Upload Picture of Clothes:</label>
     <input type="file" name="image" accept="image/*" required />
-    
+
     <label>Select Delivery Location:</label>
     <select name="delivery_location" required>
       <option value="" disabled selected>Select a location</option>
       <option value="Location 1">Location 1</option>
       <option value="Location 2">Location 2</option>
       <option value="Location 3">Location 3</option>
+      <option value="Location 4">Location 4</option>
+      <option value="Location 5">Location 5</option>
+      <option value="Location 6">Location 6</option>
+      <option value="Location 7">Location 7</option>
+      <option value="Location 8">Location 8</option>
+      <option value="Location 9">Location 9</option>
+      <option value="Location 10">Location 10</option>
+      <option value="Location 11">Location 11</option>
+      <option value="Location 12">Location 12</option>
     </select>
 
-    <button type="submit">Submit</button>
+    <button type="submit">Submit Donation</button>
   </form>
 </body>
 </html>
