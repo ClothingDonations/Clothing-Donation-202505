@@ -4,22 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donate Clothes</title>
-  <link rel="stylesheet" href="donate.css">
+  <link rel="stylesheet" href="donate.css" />
 </head>
 <body>
-  <div class="form-container">
-    <h2 class="fade-in">Donate Your Clothes</h2>
-    <p class="sub-text fade-in">Thank you for stepping a small step toward improving society.</p>
+  <div class="container">
+    <a href="index.html" class="back-home">← Back to Home</a>
+    <h2>Donate Your Clothes</h2>
+    <p class="subtitle">Thank you for taking a small step toward improving society.</p>
 
-    <form action="https://formsubmit.co/hdmcwebsiteproject@gmail.com" method="POST" enctype="multipart/form-data" class="slide-up">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <textarea name="address" placeholder="Your Address" required></textarea>
+    <form action="https://formsubmit.co/hdmcwebsiteproject@gmail.com" method="POST" enctype="multipart/form-data">
+      <!-- Redirect to thank you page -->
+      <input type="hidden" name="_next" value="https://clothes-donation-202505.netlify.app/thankyou.html" />
 
-      <label>Upload Picture of Clothes:</label>
-      <input type="file" name="image" accept="image/*" required />
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-      <label>Select Delivery Location:</label>
-      <select name="delivery_location" required>
+      <label for="address">Your Address</label>
+      <textarea id="address" name="address" placeholder="Enter your full address" required></textarea>
+
+      <label for="image">Upload Picture of Clothes</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+
+      <label for="delivery_location">Select Delivery Location</label>
+      <select id="delivery_location" name="delivery_location" required>
         <option value="" disabled selected>Select a location</option>
         <option value="Location 1">Location 1</option>
         <option value="Location 2">Location 2</option>
@@ -35,14 +42,8 @@
         <option value="Location 12">Location 12</option>
       </select>
 
-      <input type="hidden" name="_next" value="https://clothes-donation-202505.netlify.app/thankyou.html" />
-      <label>Suggested Nearest Location:</label>
-      <input type="text" id="suggested-location" disabled placeholder="Nearest location will appear here" />
       <button type="submit">Submit</button>
     </form>
-
-    <a href="index.html" class="back-home-button">← Back to Home</a>
   </div>
-  <script src="suggest-location.js"></script>
 </body>
 </html>
