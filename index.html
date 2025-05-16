@@ -3,126 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clothing Donation Form</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Clothing Donation | Home</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-
-    form {
-      background: white;
-      padding: 30px 40px;
-      border-radius: 20px;
-      max-width: 500px;
-      width: 100%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      animation: fadeInUp 1s ease;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 10px;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #fceabb, #f8b500);
       color: #333;
     }
-
-    .subtitle {
+    header {
+      background-color: #ffffff88;
+      padding: 1rem;
       text-align: center;
-      margin-bottom: 20px;
-      color: #666;
-      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 12px 0;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 1rem;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
     }
-
-    label {
-      font-weight: 500;
-      margin-top: 10px;
-      display: block;
+    .quotes {
+      font-style: italic;
       color: #444;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
     }
-
-    button {
-      background: #4CAF50;
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .hero img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .cta-button {
+      background-color: #ff6f61;
       color: white;
+      padding: 12px 24px;
       border: none;
-      padding: 12px 20px;
-      font-size: 1rem;
-      border-radius: 10px;
+      font-size: 1.2rem;
+      border-radius: 8px;
       cursor: pointer;
-      margin-top: 10px;
-      width: 100%;
-      transition: background 0.3s ease;
+      text-decoration: none;
+      margin-top: 2rem;
+      transition: background 0.3s;
     }
-
-    button:hover {
-      background: #45a049;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        transform: translateY(40px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    .cta-button:hover {
+      background-color: #e25b50;
     }
   </style>
 </head>
 <body>
-  <form action="https://formsubmit.co/hdmcwebsiteproject@gmail.com" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://6826ae5609ad3171578282da--clothes-donation-202505.netlify.app/thankyou.html" />
+  <header>
+    <h1>Clothing Donation Drive</h1>
+    <div class="quotes">"What you no longer wear, someone else could cherish."</div>
+    <div class="quotes">"Give warmth, give dignity — donate your clothes."</div>
+  </header>
 
-    <h2>Donate Your Clothes</h2>
-    <div class="subtitle">Thank you for stepping a small step toward improving society.</div>
-
-    <input type="text" name="name" placeholder="Your Name" required />
-    <textarea name="address" placeholder="Your Address" rows="4" required></textarea>
-
-    <label>Upload Picture of Clothes:</label>
-    <input type="file" name="image" accept="image/*" required />
-
-    <label>Select Delivery Location:</label>
-    <select name="delivery_location" required>
-      <option value="" disabled selected>Select a location</option>
-      <option value="Location 1">Location 1</option>
-      <option value="Location 2">Location 2</option>
-      <option value="Location 3">Location 3</option>
-      <option value="Location 4">Location 4</option>
-      <option value="Location 5">Location 5</option>
-      <option value="Location 6">Location 6</option>
-      <option value="Location 7">Location 7</option>
-      <option value="Location 8">Location 8</option>
-      <option value="Location 9">Location 9</option>
-      <option value="Location 10">Location 10</option>
-      <option value="Location 11">Location 11</option>
-      <option value="Location 12">Location 12</option>
-    </select>
-
-    <button type="submit">Submit Donation</button>
-  </form>
-  <script src="suggest-location.js"></script>
+  <div class="hero">
+    <img src="https://source.unsplash.com/800x400/?donation,clothes" alt="Clothes donation">
+    <img src="https://source.unsplash.com/800x400/?charity,volunteer" alt="Helping others">
+    <a href="donate.html" class="cta-button">Donate Now</a>
+  </div>
 </body>
 </html>
