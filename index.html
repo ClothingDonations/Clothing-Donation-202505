@@ -6,9 +6,6 @@
   <title>Clothing Donation | Home</title>
   <link rel="stylesheet" href="testimonials.css" />
   <style>
-    /* Existing styles from testimonials.css assumed here */
-
-    /* Modal Styles */
     .language-modal {
       position: fixed;
       top: 0; left: 0;
@@ -51,6 +48,17 @@
     .hidden {
       display: none;
     }
+
+    .change-lang {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #f3f4f6;
+      border: 1px solid #ccc;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -63,6 +71,8 @@
       <button class="lang-button" onclick="selectLanguage('kn')">ಕನ್ನಡ</button>
     </div>
   </div>
+
+  <button class="change-lang" onclick="showLanguageModal()">🌐 Change Language</button>
 
   <!-- Page Content -->
   <header>
@@ -84,27 +94,49 @@
         <p class="author" data-en="— Mahatma Gandhi" data-kn="— ಮಹಾತ್ಮಾ ಗಾಂಧೀಜಿ"></p>
       </div>
       <div class="card">
-        <p class="quote" data-en='"As consumers, we have so much power to change the world by just being careful in what we buy."' data-kn='"ನಾವು ಖರೀದಿಸುವುದರಲ್ಲಿ ಜಾಗ್ರತೆಯಿಂದ ವರ್ತಿಸಿದರೆ, ನಾವು ಜಗತ್ತನ್ನು ಬದಲಾಯಿಸಬಹುದು."' ></p>
+        <p class="quote" data-en='"As consumers, we have so much power to change the world by just being careful in what we buy."' data-kn='"ನಾವು ಖರೀದಿಸುವುದರಲ್ಲಿ ಜಾಗ್ರತೆಯಿಂದ ವರ್ತಿಸಿದರೆ, ನಾವು ಜಗತ್ತನ್ನು ಬದಲಾಯಿಸಬಹುದು."'></p>
         <p class="author" data-en="— Emma Watson" data-kn="— ಎಮ್ಮಾ ವಾಟ್ಸನ್"></p>
       </div>
     </div>
 
     <div class="button-container">
-      <a href="donate.html" class="cta-button" data-en="Donate Now" data-kn="ಇದೀಗ ದೇಣಿಗೆ ನೀಡಿ">Donate Now</a>
+      <a id="donateLink" href="donate.html" class="cta-button" data-en="Donate Now" data-kn="ಇದೀಗ ದೇಣಿಗೆ ನೀಡಿ">Donate Now</a>
     </div>
   </section>
 
-  <!-- JS -->
+  <!-- JavaScript -->
   <script>
     function selectLanguage(lang) {
-      const modal = document.getElementById('languageModal');
-      modal.classList.add('hidden');
+      document.getElementById('languageModal').classList.add('hidden');
+      applyLanguage(lang);
 
-      // Change all text based on selected language
+      // Update donate button link with lang query
+      document.getElementById('donateLink').href = `donate.html?lang=${lang}`;
+    }
+
+    function applyLanguage(lang) {
       document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute(`data-${lang}`);
       });
     }
+
+    function showLanguageModal() {
+      document.getElementById('languageModal').classList.remove('hidden');
+    }
+
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const lang = getQueryParam('lang') || null;
+      if (lang) {
+        document.getElementById('languageModal').classList.add('hidden');
+        applyLanguage(lang);
+        document.getElementById('donateLink').href = `donate.html?lang=${lang}`;
+      }
+    });
   </script>
 
 </body>
