@@ -1,16 +1,16 @@
 const deliveryLocations = [
-  { name: "Location 1", lat: 12.9716, lon: 77.5946 },
-  { name: "Location 2", lat: 13.0358, lon: 77.5970 },
-  { name: "Location 3", lat: 12.9250, lon: 77.5938 },
-  { name: "Location 4", lat: 13.0204, lon: 77.5905 },
-  { name: "Location 5", lat: 12.9762, lon: 77.6033 },
-  { name: "Location 6", lat: 12.9416, lon: 77.5668 },
-  { name: "Location 7", lat: 12.9141, lon: 77.6387 },
-  { name: "Location 8", lat: 12.9970, lon: 77.5600 },
-  { name: "Location 9", lat: 13.0438, lon: 77.6215 },
-  { name: "Location 10", lat: 13.0287, lon: 77.5933 },
-  { name: "Location 11", lat: 12.9712, lon: 77.6410 },
-  { name: "Location 12", lat: 12.9188, lon: 77.6101 }
+  { name: "Location 1", lat: 15.4580, lon: 75.0078 },
+  { name: "Location 2", lat: 15.3694, lon: 75.1239 },
+  { name: "Location 3", lat: 15.3647, lon: 75.1239 },
+  { name: "Location 4", lat: 15.39288, lon: 75.0815 },
+  { name: "Location 5", lat: 15.3639, lon: 75.1145 },
+  { name: "Location 6", lat: 15.3653, lon: 75.1245 },
+  { name: "Location 7", lat: 15.3494, lon: 75.1103 },
+  { name: "Location 8", lat: 15.3518, lon: 75.1147 },
+  { name: "Location 9", lat: 15.3325, lon: 75.1251 },
+  { name: "Location 10", lat: 15.3497, lon: 75.1334 },
+  { name: "Location 11", lat: 15.3647, lon: 75.1239 },
+  { name: "Location 12", lat: 15.4603, lon: 75.0103 }
 ];
 
 const addressInput = document.querySelector("textarea[name='address']");
