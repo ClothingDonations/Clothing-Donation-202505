@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donate Clothes</title>
+  
+  <!-- Link to the external CSS file -->
   <link rel="stylesheet" href="donate.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
@@ -13,7 +16,6 @@
     <p class="subtitle">Thank you for taking a small step toward improving society.</p>
 
     <form action="https://formsubmit.co/hdmcwebsiteproject@gmail.com" method="POST" enctype="multipart/form-data">
-      <!-- Redirect to thank you page -->
       <input type="hidden" name="_next" value="https://clothes-donation-202505.netlify.app/thankyou.html" />
 
       <label for="name">Your Name</label>
@@ -28,22 +30,25 @@
       <label for="delivery_location">Select Delivery Location</label>
       <select id="delivery_location" name="delivery_location" required>
         <option value="" disabled selected>Select a location</option>
-        <option value="Location 1">Location 1</option>
-        <option value="Location 2">Location 2</option>
-        <option value="Location 3">Location 3</option>
-        <option value="Location 4">Location 4</option>
-        <option value="Location 5">Location 5</option>
-        <option value="Location 6">Location 6</option>
-        <option value="Location 7">Location 7</option>
-        <option value="Location 8">Location 8</option>
-        <option value="Location 9">Location 9</option>
-        <option value="Location 10">Location 10</option>
-        <option value="Location 11">Location 11</option>
-        <option value="Location 12">Location 12</option>
+        <option value="Location 1">Zone 1: Near Uday Hostel Dharakoti Road, Dharwad</option>
+        <option value="Location 2">Zone 2: Tippu Sultan Circle, Mankilla Main Road, Dharwad</option>
+        <option value="Location 3">Zone 3: Near Jubilee Circle, Beside Kalabhavan, Dharwad</option>
+        <option value="Location 4">Zone 4: Near police station, Navnagar, Hubli</option>
+        <option value="Location 5">Zone 5: Old Income tax road, Vidyanagar, Hubli</option>
+        <option value="Location 6">Zone 6: Old Badami Nagar,Kusugal Road, Keshwapur, Hubli</option>
+        <option value="Location 7">Zone 7: Akshay Park, Gokul Road, Hubli</option>
+        <option value="Location 8">Zone 8: Navanagar Building, J.c.Nagar, Hubli</option>
+        <option value="Location 9">Zone 9: Ayodhya Nagar, Old Hubli, Hubli</option>
+        <option value="Location 10">Zone 10: Old Hubli market building, old Hubli</option>
+        <option value="Location 11">Zone 11: Behind New English School, P.B.Road, Hubli</option>
+        <option value="Location 12">Zone 12: kalabhavan near Jubilee circle, Dharwad</option>
       </select>
 
       <button type="submit">Submit</button>
     </form>
   </div>
+
+  <!-- Link to the external JavaScript file -->
+  <script src="suggest-location.js"></script>
 </body>
 </html>
