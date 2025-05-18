@@ -3,31 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Donate Clothes</title>
-  
-  <!-- Link to the external CSS file -->
+  <title data-en="Donate Clothes" data-kn="ಬಟ್ಟೆ ದೇಣಿಗೆ ನೀಡಿ">Donate Clothes</title>
+
   <link rel="stylesheet" href="donate.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .change-lang {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 0.2rem 0.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .language-modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .language-popup {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .lang-button {
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #3B82F6;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    .lang-button:hover {
+      background-color: #2563EB;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <a href="index.html" class="back-home">← Back to Home</a>
-    <h2>Donate Your Clothes</h2>
-    <p class="subtitle">Thank you for taking a small step toward improving society.</p>
+    <a href="index.html" class="back-home" data-en="← Back to Home" data-kn="← ಮುಖ್ಯ ಪುಟಕ್ಕೆ ಹಿಂದಿರುಗಿ">← Back to Home</a>
+    <button class="change-lang" onclick="showLanguageModal()">🌐 Change Language</button>
+
+    <h2 data-en="Donate Your Clothes" data-kn="ನಿಮ್ಮ ಬಟ್ಟೆಗಳನ್ನು ದೇಣಿಗೆ ನೀಡಿ">Donate Your Clothes</h2>
+    <p class="subtitle" data-en="Thank you for taking a small step toward improving society." data-kn="ಸಮಾಜವನ್ನು ಸುಧಾರಿಸಲು ನೀವು ಒಂದು ಸಣ್ಣ ಹೆಜ್ಜೆ ಇಟ್ಟಿದ್ದೀರಿ, ಧನ್ಯವಾದಗಳು.">Thank you for taking a small step toward improving society.</p>
 
     <form action="https://formsubmit.co/hdmcwebsiteproject@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_next" value="https://clothes-donation-202505.netlify.app/thankyou.html" />
 
-      <label for="name">Your Name</label>
+      <label for="name" data-en="Your Name" data-kn="ನಿಮ್ಮ ಹೆಸರು">Your Name</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-      <label for="address">Your Address</label>
+      <label for="address" data-en="Your Address" data-kn="ನಿಮ್ಮ ವಿಳಾಸ">Your Address</label>
       <textarea id="address" name="address" placeholder="Enter your full address" required></textarea>
 
-      <label for="image">Upload Picture of Clothes</label>
+      <label for="image" data-en="Upload Picture of Clothes" data-kn="ಬಟ್ಟೆಗಳ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ">Upload Picture of Clothes</label>
       <input type="file" id="image" name="image" accept="image/*" required>
 
-      <label for="delivery_location">Select Delivery Location</label>
+      <label for="delivery_location" data-en="Select Delivery Location" data-kn="ವಿತರಣಾ ಸ್ಥಳವನ್ನು ಆಯ್ಕೆಮಾಡಿ">Select Delivery Location</label>
       <select id="delivery_location" name="delivery_location" required>
         <option value="" disabled selected>Select a location</option>
         <option value="Location 1">Zone 1: Near Uday Hostel Dharakoti Road, Dharwad</option>
@@ -44,11 +96,47 @@
         <option value="Location 12">Zone 12: kalabhavan near Jubilee circle, Dharwad</option>
       </select>
 
-      <button type="submit">Submit</button>
+      <button type="submit" data-en="Submit" data-kn="ಸಲ್ಲಿಸು">Submit</button>
     </form>
   </div>
 
-  <!-- Link to the external JavaScript file -->
+  <!-- Language Modal -->
+  <div class="language-modal hidden" id="languageModal">
+    <div class="language-popup">
+      <h2>Select Language / ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ</h2>
+      <button class="lang-button" onclick="setLanguage('en')">English</button>
+      <button class="lang-button" onclick="setLanguage('kn')">ಕನ್ನಡ</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+
+    function setLanguage(lang) {
+      const currentUrl = window.location.pathname;
+      window.location.href = `${currentUrl}?lang=${lang}`;
+    }
+
+    function showLanguageModal() {
+      document.getElementById('languageModal').classList.remove('hidden');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const lang = getQueryParam('lang') || 'en';
+      applyLanguage(lang);
+    });
+  </script>
+
   <script src="suggest-location.js"></script>
 </body>
 </html>
