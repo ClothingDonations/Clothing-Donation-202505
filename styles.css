@@ -1,0 +1,46 @@
+/* styles.css */
+
+/* Testimonials Section */
+.testimonials {
+  padding: 3rem 2rem;
+  background-color: #e0f2fe;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  color: #1d4ed8;
+  margin-bottom: 2rem;
+}
+
+.review-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  max-width: 320px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .quote {
+  font-size: 1.1rem;
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.card .author {
+  font-weight: bold;
+  color: #1f2937;
+}
