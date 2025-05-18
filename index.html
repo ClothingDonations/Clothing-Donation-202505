@@ -6,90 +6,106 @@
   <title>Clothing Donation | Home</title>
   <link rel="stylesheet" href="testimonials.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #dbeafe, #f0f9ff);
-      color: #1F2937;
-    }
-    header {
-      background-color: #ffffffcc;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    .quotes {
-      font-style: italic;
-      color: #4B5563;
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-    }
-    .hero {
+    /* Existing styles from testimonials.css assumed here */
+
+    /* Modal Styles */
+    .language-modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .language-popup {
+      background: white;
       padding: 2rem;
-    }
-    .hero img {
-      max-width: 100%;
       border-radius: 12px;
-      margin: 1rem 0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
-    .cta-button {
-      background-color: #3B82F6;
-      color: white;
-      padding: 12px 24px;
+
+    .language-popup h2 {
+      margin-bottom: 1rem;
+    }
+
+    .lang-button {
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      font-size: 1.1rem;
       border: none;
-      font-size: 1.2rem;
       border-radius: 8px;
       cursor: pointer;
-      text-decoration: none;
-      margin-top: 2rem;
+      background-color: #3B82F6;
+      color: white;
       transition: background 0.3s;
     }
-    .cta-button:hover {
+
+    .lang-button:hover {
       background-color: #2563EB;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Clothing Donation Drive</h1>
-    <div class="quotes">"What you no longer wear, someone else could cherish."</div>
-    <div class="quotes">"Give warmth, give dignity — donate your clothes."</div>
-  </header>
-
-  <div class="hero">
-    <img src="https://source.unsplash.com/800x400/?donation,clothes" alt="Clothes donation">
-    <img src="https://source.unsplash.com/800x400/?charity,volunteer" alt="Helping others">
-    <a href="donate.html" class="cta-button">Donate Now</a>
+  <!-- Language Modal -->
+  <div class="language-modal" id="languageModal">
+    <div class="language-popup">
+      <h2>Select Language / ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ</h2>
+      <button class="lang-button" onclick="selectLanguage('en')">English</button>
+      <button class="lang-button" onclick="selectLanguage('kn')">ಕನ್ನಡ</button>
+    </div>
   </div>
 
+  <!-- Page Content -->
+  <header>
+    <h1 data-en="Clothing Donation Drive" data-kn="ಬಟ್ಟೆ ದೇಣಿಗೆ ಚಾಲನೆ">Clothing Donation Drive</h1>
+    <div class="quotes" data-en='"What you no longer wear, someone else could cherish."' data-kn='"ನೀವು ಹಾಕಿದ ಬಟ್ಟೆ ಯಾರಿಗಾದರೂ ಅಮೂಲ್ಯವಾಗಬಹುದು."'></div>
+    <div class="quotes" data-en='"Give warmth, give dignity — donate your clothes."' data-kn='"ಉಡುಪು ನೀಡಿ, ಆತ್ಮಗೌರವ ನೀಡಿ — ದಯವಿಟ್ಟು ದೇಣಿಗೆ ನೀಡಿ."'></div>
+  </header>
+
+  <!-- Testimonials -->
   <section class="testimonials">
-    <h2>Voices That Inspire</h2>
+    <h2 data-en="Voices That Inspire" data-kn="ಪ್ರೇರಣೆಯ ಮಾತುಗಳು">Voices That Inspire</h2>
     <div class="review-cards">
       <div class="card">
-        <p class="quote">"If you can't feed a hundred people, then feed just one."</p>
-        <p class="author">— Mother Teresa</p>
+        <p class="quote" data-en='"If you can’t feed a hundred people, then feed just one."' data-kn='"ನೀವು ನೂರಾರು ಜನರಿಗೆ ಆಹಾರ ನೀಡಲಾಗದಿದ್ದರೆ, ಒಬ್ಬರಿಗಾದರೂ ಆಹಾರ ನೀಡಿ."'></p>
+        <p class="author" data-en="— Mother Teresa" data-kn="— ಮದರ್ ತೆರೆಸಾ"></p>
       </div>
-
       <div class="card">
-        <p class="quote">"The best way to find yourself is to lose yourself in the service of others."</p>
-        <p class="author">— Mahatma Gandhi</p>
+        <p class="quote" data-en='"The best way to find yourself is to lose yourself in the service of others."' data-kn='"ಇತರರಿಗೆ ಸೇವೆ ಮಾಡುವುದರಲ್ಲಿ ನಿಮ್ಮನ್ನು ನೀವು ಕಾಣಬಹುದು."'></p>
+        <p class="author" data-en="— Mahatma Gandhi" data-kn="— ಮಹಾತ್ಮಾ ಗಾಂಧೀಜಿ"></p>
       </div>
-
       <div class="card">
-        <p class="quote">"As consumers, we have so much power to change the world by just being careful in what we buy."</p>
-        <p class="author">— Emma Watson</p>
+        <p class="quote" data-en='"As consumers, we have so much power to change the world by just being careful in what we buy."' data-kn='"ನಾವು ಖರೀದಿಸುವುದರಲ್ಲಿ ಜಾಗ್ರತೆಯಿಂದ ವರ್ತಿಸಿದರೆ, ನಾವು ಜಗತ್ತನ್ನು ಬದಲಾಯಿಸಬಹುದು."' ></p>
+        <p class="author" data-en="— Emma Watson" data-kn="— ಎಮ್ಮಾ ವಾಟ್ಸನ್"></p>
       </div>
     </div>
+
+    <div class="button-container">
+      <a href="donate.html" class="cta-button" data-en="Donate Now" data-kn="ಇದೀಗ ದೇಣಿಗೆ ನೀಡಿ">Donate Now</a>
+    </div>
   </section>
+
+  <!-- JS -->
+  <script>
+    function selectLanguage(lang) {
+      const modal = document.getElementById('languageModal');
+      modal.classList.add('hidden');
+
+      // Change all text based on selected language
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+  </script>
 
 </body>
 </html>
