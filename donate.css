@@ -28,7 +28,7 @@ h2 {
 
 .subtitle {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: #df3b3b;
   margin-bottom: 20px;
 }
@@ -64,7 +64,7 @@ button {
   border: none;
   padding: 12px;
   border-radius: 6px;
-  font-size: 1.1rem;
+  font-size: 0.5rem;
   cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
