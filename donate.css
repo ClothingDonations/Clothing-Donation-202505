@@ -9,7 +9,7 @@ body {
   max-width: 500px;
   margin: 30px auto;
   padding: 20px;
-  background: #ffffffee;
+  background: #e9ef9bee;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   animation: fadeIn 1s ease-in;
@@ -28,7 +28,7 @@ h2 {
 
 .subtitle {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #666;
   margin-bottom: 20px;
 }
@@ -46,7 +46,7 @@ input[type="file"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #e3eac3;
   border-radius: 6px;
   box-sizing: border-box;
   font-size: 1rem;
@@ -60,7 +60,7 @@ textarea {
 button {
   width: 100%;
   background-color: #4CAF50;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 12px;
   border-radius: 6px;
