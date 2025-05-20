@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom right, #ffb3b3, #ff4d4d); /* soft to bold red gradient */
-  color: #1F2937;
+  color: #000000;
 }
 
 header {
@@ -18,8 +18,8 @@ h1 {
 }
 
 .quotes {
-  font-style: italic;
-  color: #8b0000;
+  font-weight: bold;
+  color: #696fce;
   margin-top: 0.5rem;
   font-size: 1.1rem;
 }
@@ -98,7 +98,7 @@ h1 {
   padding: 2rem;
 }
 .testimonials h2 {
-  color: #e60000;
+  color: #211e1e;
   margin-bottom: 2rem;
 }
 
