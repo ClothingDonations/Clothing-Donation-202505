@@ -6,138 +6,78 @@
   <title>Clothing Donation | Home</title>
   <link rel="stylesheet" href="testimonials.css" />
   <style>
-    .language-modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background-color: rgba(33, 85, 141, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    .language-popup {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-
-    .language-popup h2 {
+    /* Include essential layout styles for responsiveness */
+    .header-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
       margin-bottom: 1rem;
     }
 
-    .lang-button {
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .gallery-grid img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
       padding: 0.75rem 1.5rem;
-      margin: 0.5rem;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background-color: #3B82F6;
+      background-color: #10b981;
       color: white;
-      transition: background 0.3s;
-    }
-
-    .lang-button:hover {
-      background-color: #2563EB;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .change-lang {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #f3f4f6;
-      border: 1px solid #ccc;
-      padding: 0.5rem 1rem;
       border-radius: 8px;
-      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .quotes {
+      font-style: italic;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .quotes p {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Language Modal -->
-  <div class="language-modal" id="languageModal">
-    <div class="language-popup">
-      <h2>Select Language / ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ</h2>
-      <button class="lang-button" onclick="selectLanguage('en')">English</button>
-      <button class="lang-button" onclick="selectLanguage('kn')">ಕನ್ನಡ</button>
-    </div>
-  </div>
-
-  <button class="change-lang" onclick="showLanguageModal()">🌐 Change Language</button>
-
-  <!-- Page Content -->
+  <!-- Banner Image -->
   <header>
-    <h1 data-en="Clothing Donation Drive" data-kn="ಬಟ್ಟೆ ದೇಣಿಗೆ ಚಾಲನೆ">Clothing Donation Drive</h1>
-    <div class="quotes" data-en='"What you no longer wear, someone else could cherish."' data-kn='"ನೀವು ಹಾಕಿದ ಬಟ್ಟೆ ಯಾರಿಗಾದರೂ ಅಮೂಲ್ಯವಾಗಬಹುದು."'></div>
-    <div class="quotes" data-en='"Give warmth, give dignity — donate your clothes."' data-kn='"ಉಡುಪು ನೀಡಿ, ಆತ್ಮಗೌರವ ನೀಡಿ — ದಯವಿಟ್ಟು ದೇಣಿಗೆ ನೀಡಿ."'></div>
+    <img src="images/banner.jpg" alt="Clothing Donation Banner" class="header-image">
+    <h1 class="main-heading">Clothing Donation Drive</h1>
   </header>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2 data-en="Voices That Inspire" data-kn="ಪ್ರೇರಣೆಯ ಮಾತುಗಳು">Voices That Inspire</h2>
-    <div class="review-cards">
-      <div class="card">
-        <p class="quote" data-en='"If you can’t feed a hundred people, then feed just one."' data-kn='"ನೀವು ನೂರಾರು ಜನರಿಗೆ ಆಹಾರ ನೀಡಲಾಗದಿದ್ದರೆ, ಒಬ್ಬರಿಗಾದರೂ ಆಹಾರ ನೀಡಿ."'></p>
-        <p class="author" data-en="— Mother Teresa" data-kn="— ಮದರ್ ತೆರೆಸಾ"></p>
-      </div>
-      <div class="card">
-        <p class="quote" data-en='"The best way to find yourself is to lose yourself in the service of others."' data-kn='"ಇತರರಿಗೆ ಸೇವೆ ಮಾಡುವುದರಲ್ಲಿ ನಿಮ್ಮನ್ನು ನೀವು ಕಾಣಬಹುದು."'></p>
-        <p class="author" data-en="— Mahatma Gandhi" data-kn="— ಮಹಾತ್ಮಾ ಗಾಂಧೀಜಿ"></p>
-      </div>
-      <div class="card">
-        <p class="quote" data-en='"As consumers, we have so much power to change the world by just being careful in what we buy."' data-kn='"ನಾವು ಖರೀದಿಸುವುದರಲ್ಲಿ ಜಾಗ್ರತೆಯಿಂದ ವರ್ತಿಸಿದರೆ, ನಾವು ಜಗತ್ತನ್ನು ಬದಲಾಯಿಸಬಹುದು."'></p>
-        <p class="author" data-en="— Emma Watson" data-kn="— ಎಮ್ಮಾ ವಾಟ್ಸನ್"></p>
-      </div>
-    </div>
-
-    <div class="button-container">
-      <a id="donateLink" href="donate.html" class="cta-button" data-en="Donate Now" data-kn="ಇದೀಗ ದೇಣಿಗೆ ನೀಡಿ">Donate Now</a>
+  <!-- Gallery replacing quotes -->
+  <section class="gallery">
+    <div class="gallery-grid">
+      <img src="images/photo1.jpg" alt="Donation Photo 1">
+      <img src="images/photo2.jpg" alt="Donation Photo 2">
+      <img src="images/photo3.jpg" alt="Donation Photo 3">
     </div>
   </section>
 
-  <!-- JavaScript -->
-  <script>
-    function selectLanguage(lang) {
-      document.getElementById('languageModal').classList.add('hidden');
-      applyLanguage(lang);
+  <!-- Call to Action -->
+  <div class="button-container" style="text-align: center;">
+    <a href="donate.html" class="cta-button">Donate Now</a>
+  </div>
 
-      // Update donate button link with lang query
-      document.getElementById('donateLink').href = `donate.html?lang=${lang}`;
-    }
-
-    function applyLanguage(lang) {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-      });
-    }
-
-    function showLanguageModal() {
-      document.getElementById('languageModal').classList.remove('hidden');
-    }
-
-    function getQueryParam(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const lang = getQueryParam('lang') || null;
-      if (lang) {
-        document.getElementById('languageModal').classList.add('hidden');
-        applyLanguage(lang);
-        document.getElementById('donateLink').href = `donate.html?lang=${lang}`;
-      }
-    });
-  </script>
+  <!-- Quotes moved below Donate button -->
+  <div class="quotes">
+    <p>"What you no longer wear, someone else could cherish."</p>
+    <p>"Give warmth, give dignity — donate your clothes."</p>
+  </div>
 
 </body>
 </html>
