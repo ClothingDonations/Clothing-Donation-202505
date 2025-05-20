@@ -6,7 +6,7 @@ body {
 }
 
 header {
-  background-color: #fff5f5cc;
+  background-color: #7ae985cc;
   padding: 1.5rem 1rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(145, 19, 19, 0.1);
@@ -26,7 +26,7 @@ h1 {
 
 .cta-button {
   background-color: #e60000;
-  color: white;
+  color: rgb(153, 226, 142);
   padding: 12px 24px;
   border: none;
   font-size: 1.2rem;
@@ -38,7 +38,7 @@ h1 {
   display: inline-block;
 }
 .cta-button:hover {
-  background-color: #cc0000;
+  background-color: #e2dd53;
 }
 
 .carousel-section {
