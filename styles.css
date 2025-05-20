@@ -2,13 +2,13 @@
 
 /* Testimonials Section */
 .testimonials {
-  padding: 3rem 2rem;
-  background-color: #e0f2fe;
+  padding: 5rem 3rem;
+  background-color: hsl(66, 56%, 68%);
   text-align: center;
 }
 
 .testimonials h2 {
-  font-size: 2rem;
+  font-size: 5rem;
   color: #1d4ed8;
   margin-bottom: 2rem;
 }
@@ -21,7 +21,7 @@
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: #a6ce6b;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 1.5rem;
@@ -34,10 +34,10 @@
 }
 
 .card .quote {
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   color: #374151;
-  font-style: italic;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 .card .author {
