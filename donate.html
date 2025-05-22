@@ -141,8 +141,7 @@
       applyLanguage(lang);
     });
   </script>
-
-  <script src="suggest-location.js"></script>
+  <script src="static/suggest-location.js"></script>
   <!-- Info Button -->
 <div style="text-align:center; margin-top: 1rem;">
   <button class="info-button" onclick="showPopup()">ℹ️ How to Circulate Clothes</button>
@@ -165,5 +164,49 @@
     <button class="understand-button" onclick="hidePopup()">I Understand</button>
   </div>
 </div>
+
+<script>
+  // Auto-detect and suggest nearest center
+  function detectNearestLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        fetch("http://localhost:8080/live-location", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ latitude: lat, longitude: lon })
+        })
+        .then(res => res.text())
+        .then(nearest => {
+          document.getElementById("auto_location").value = nearest;
+
+          // Auto-select the nearest in dropdown if matching
+          const select = document.getElementById("delivery_location");
+          for (let option of select.options) {
+            if (option.text.includes(nearest)) {
+              option.selected = true;
+              break;
+            }
+          }
+        })
+        .catch(() => {
+          document.getElementById("auto_location").value = "Unable to determine.";
+        });
+      }, () => {
+        document.getElementById("auto_location").value = "Permission denied for location.";
+      });
+    } else {
+      document.getElementById("auto_location").value = "Geolocation not supported.";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    detectNearestLocation();
+  });
+</script>
 </body>
 </html>
