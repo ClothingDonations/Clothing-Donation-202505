@@ -44,3 +44,95 @@
   font-weight: bold;
   color: #1f2937;
 }
+
+/* Popup Modal Styles */
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #2563eb; /* blue heading */
+}
+
+.popup-content ul {
+  padding-left: 1.2rem;
+  margin-top: 1rem;
+}
+
+.popup-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.info-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.info-button:hover {
+  background-color: #2563eb;
+}
+
+/* Hidden class */
+.hidden {
+  display: none;
+}
+
+/* Style for all input fields, including phone */
+input[type="text"],
+input[type="tel"],
+input[type="file"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Optional: specific styling for phone input */
+#phone {
+  font-family: inherit;
+}
