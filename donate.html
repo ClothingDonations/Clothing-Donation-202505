@@ -74,6 +74,9 @@
       <label for="address" data-en="Your Address" data-kn="ನಿಮ್ಮ ವಿಳಾಸ">Your Address</label>
       <textarea id="address" name="address" placeholder="Enter your full address" required></textarea>
 
+      <label for="phone" data-en="Phone Number" data-kn="ದೂರವಾಣಿ ಸಂಖ್ಯೆ">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+
       <label for="image" data-en="Upload Picture of Clothes" data-kn="ಬಟ್ಟೆಗಳ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ">Upload Picture of Clothes</label>
       <input type="file" id="image" name="image" accept="image/*" required>
 
@@ -93,7 +96,11 @@
         <option value="Location 11">Zone 11: Behind New English School, P.B.Road, Hubli</option>
         <option value="Location 12">Zone 12: kalabhavan near Jubilee circle, Dharwad</option>
       </select>
-
+      <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #181818;" 
+        data-en="Kindly deliver your clothes to the location you have selected above." 
+        data-kn="ದಯವಿಟ್ಟು ನೀವು ಮೇಲ್ನೋಟದಲ್ಲಿ ಆಯ್ಕೆ ಮಾಡಿದ ಸ್ಥಳಕ್ಕೆ ನಿಮ್ಮ ಬಟ್ಟೆಗಳನ್ನು ಒದಗಿಸಿ.">
+        Kindly deliver your clothes to the location you have selected above.
+      </p>
       <button type="submit" data-en="Submit" data-kn="ಸಲ್ಲಿಸು">Submit</button>
     </form>
   </div>
@@ -136,5 +143,27 @@
   </script>
 
   <script src="suggest-location.js"></script>
+  <!-- Info Button -->
+<div style="text-align:center; margin-top: 1rem;">
+  <button class="info-button" onclick="showPopup()">ℹ️ How to Circulate Clothes</button>
+</div>
+
+<script src="suggest-location.js"></script>
+
+<!-- Popup Modal -->
+<!-- Auto-Show Popup Modal -->
+<div class="popup-modal" id="popupModal">
+  <div class="popup-content">
+    <h3>How to Circulate Donated Clothes</h3>
+    <ul>
+      <li>Make sure all clothes are clean, dry, and fresh. No stains, smells, or damp items.</li>
+      <li>Group your clothes into: 1.Men’s Clothing 2.Women’s Clothing 3.Children’s Clothing 4.Winter Wear (jackets, sweaters, etc.)Blankets and 5.Warm Accessories (scarves, gloves, socks, etc.)</li>
+      <li>Please do not donate ripped, stained, or unusable clothes. We want the clothes to bring dignity and warmth to someone in need..</li>
+      <li>Fold and pack clothes in a clean bag or box. Label the outside with the category if possible (e.g., “Women’s Winter Wear”).</li>
+      <li>If you're donating shoes, make sure they’re in good condition and paired properly.</li>
+    </ul>
+    <button class="understand-button" onclick="hidePopup()">I Understand</button>
+  </div>
+</div>
 </body>
 </html>
