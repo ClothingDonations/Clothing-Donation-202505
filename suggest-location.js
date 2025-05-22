@@ -76,3 +76,13 @@ function getDistance(lat1, lon1, lat2, lon2) {
 function toRad(deg) {
   return deg * Math.PI / 180;
 }
+
+// Popup modal controls for clothing circulation guide
+function hidePopup() {
+  document.getElementById('popupModal').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Automatically show popup on page load
+  document.getElementById('popupModal').style.display = 'flex';
+});
