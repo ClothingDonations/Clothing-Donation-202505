@@ -60,6 +60,14 @@
   </style>
 </head>
 <body>
+
+<div class="progress-section">
+  <div class="progress-label" id="progressText" data-en="Clothes Collected: 0/2000" data-kn="ಸಂಗ್ರಹಿತ ಬಟ್ಟೆಗಳು: 0/2000">Clothes Collected: 0/2000</div>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
   <div class="container">
     <a href="index.html" class="back-home" data-en="← Back to Home" data-kn="← ಮುಖ್ಯ ಪುಟಕ್ಕೆ ಹಿಂದಿರುಗಿ">← Back to Home</a>
     <button class="change-lang" onclick="showLanguageModal()">🌐 Change Language</button>
@@ -76,6 +84,24 @@
 
       <label for="phone" data-en="Phone Number" data-kn="ದೂರವಾಣಿ ಸಂಖ್ಯೆ">Phone Number</label>
       <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+      
+      <div class="form-group">
+        <label for="totalWeight" data-en="Total Weight of Clothes (in kg):" data-kn="ಒಟ್ಟು ಬಟ್ಟೆಗಳ ತೂಕ (ಕೆಜಿ):">Total Weight of Clothes (in kg):</label>
+        <input type="number" id="totalWeight" name="totalWeight" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label data-en="Clothing Types:" data-kn="ಬಟ್ಟೆಗಳ ಪ್ರಕಾರಗಳು:">Clothing Types:</label>
+
+        <label for="childrenClothes" data-en="Children:" data-kn="ಮಕ್ಕಳು:">Children:</label>
+        <input type="number" id="childrenClothes" name="childrenClothes" min="0">
+
+        <label for="menClothes" data-en="Men:" data-kn="ಪುರುಷರು:">Men:</label>
+        <input type="number" id="menClothes" name="menClothes" min="0">
+
+        <label for="womenClothes" data-en="Women:" data-kn="ಹೆಣ್ಣುಮಕ್ಕಳು:">Women:</label>
+        <input type="number" id="womenClothes" name="womenClothes" min="0">
+      </div>
 
       <label for="image" data-en="Upload Picture of Clothes" data-kn="ಬಟ್ಟೆಗಳ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ">Upload Picture of Clothes</label>
       <input type="file" id="image" name="image" accept="image/*" required>
@@ -207,6 +233,19 @@
   document.addEventListener("DOMContentLoaded", () => {
     detectNearestLocation();
   });
+</script>
+<script>
+  // Simulated total clothes collected
+  let collectedCount = 1350; // This would be dynamic if connected to a backend
+  let target = 2000;
+
+  function updateProgressBar() {
+    const percent = Math.min((collectedCount / target) * 100, 100);
+    document.getElementById("progressFill").style.width = percent + "%";
+    document.getElementById("progressText").textContent = `Clothes Collected: ${collectedCount}/${target}`;
+  }
+
+  window.onload = updateProgressBar;
 </script>
 </body>
 </html>
