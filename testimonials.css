@@ -102,7 +102,7 @@ body {
 }
 
 .stats {
-    font-size: 1.5rem;
+    font-size: 40px;
     font-weight: 500;
     margin-bottom: 30px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
@@ -231,6 +231,13 @@ body {
     }
 }
 
+.gratitude{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #e1d94d;
+    margin-top: 20px;
+    text-align: center;
+}
 /* PROJECTS SECTION */
 .projects {
     margin-bottom: 80px;
@@ -274,7 +281,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2e8b57;
+    color: #8b6c2e;
     margin-bottom: 15px;
 }
 
@@ -405,7 +412,7 @@ body {
 }
 
 .social-item:hover {
-    color: #2e8b57;
+    color: #40c077;
 }
 
 /* RESPONSIVE ADJUSTMENTS */
