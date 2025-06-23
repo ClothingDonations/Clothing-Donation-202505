@@ -60,12 +60,13 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <a href="index.html" class="back-home" data-en="← Back to Home" data-kn="← ಮುಖ್ಯ ಪುಟಕ್ಕೆ ಹಿಂದಿರುಗಿ">← Back to Home</a>
     <button class="change-lang" onclick="showLanguageModal()">🌐 Change Language</button>
 
-    <h2 data-en="Please fill out the donation form" data-kn="ದಯವಿಟ್ಟು ದೇಣಿಗೆ ಫಾರ್ಮ್ ತುಂಬಿ.">Donate Your Clothes</h2>
+    <h2 data-en="Donate Your Clothes" data-kn="ನಿಮ್ಮ ಬಟ್ಟೆಗಳನ್ನು ದೇಣಿಗೆ ನೀಡಿ">Donate Your Clothes</h2>
+    <p class="subtitle" data-en="Thank you for taking a small step toward improving society." data-kn="ಸಮಾಜವನ್ನು ಸುಧಾರಿಸಲು ನೀವು ಒಂದು ಸಣ್ಣ ಹೆಜ್ಜೆ ಇಟ್ಟಿದ್ದೀರಿ, ಧನ್ಯವಾದಗಳು.">Thank you for taking a small step toward improving society.</p>
+
     <form action="https://formsubmit.co/hdmcwebsiteproject@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_next" value="https://clothes-donation-202505.netlify.app/thankyou.html" />
 
@@ -75,51 +76,16 @@
       <label for="address" data-en="Your Address" data-kn="ನಿಮ್ಮ ವಿಳಾಸ">Your Address</label>
       <textarea id="address" name="address" placeholder="Enter your full address" required></textarea>
 
-      <label for="phone" data-en="Phone Number" data-kn="ದೂರವಾಣಿ ಸಂಖ್ಯೆ">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
-      
-      <div class="form-group">
-        <label for="totalWeight" data-en="Total Weight of Clothes (in kg):" data-kn="ಒಟ್ಟು ಬಟ್ಟೆಗಳ ತೂಕ (ಕೆಜಿ):">Total Weight of Clothes (in kg):</label>
-        <input type="number" id="totalWeight" name="totalWeight" min="1" required>
-      </div>
-
-      <div class="form-group">
-        <label data-en="Clothing Types:" data-kn="ಬಟ್ಟೆಗಳ ಪ್ರಕಾರಗಳು:">Clothing Types:</label>
-
-        <label for="childrenClothes" data-en="Children:" data-kn="ಮಕ್ಕಳು:">Children:</label>
-        <input type="number" id="childrenClothes" name="childrenClothes" min="0">
-
-        <label for="menClothes" data-en="Men:" data-kn="ಪುರುಷರು:">Men:</label>
-        <input type="number" id="menClothes" name="menClothes" min="0">
-
-        <label for="womenClothes" data-en="Women:" data-kn="ಹೆಣ್ಣುಮಕ್ಕಳು:">Women:</label>
-        <input type="number" id="womenClothes" name="womenClothes" min="0">
-      </div>
-
       <label for="image" data-en="Upload Picture of Clothes" data-kn="ಬಟ್ಟೆಗಳ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ">Upload Picture of Clothes</label>
       <input type="file" id="image" name="image" accept="image/*" required>
 
       <label for="delivery_location" data-en="Select Delivery Location" data-kn="ವಿತರಣಾ ಸ್ಥಳವನ್ನು ಆಯ್ಕೆಮಾಡಿ">Select Delivery Location</label>
       <select id="delivery_location" name="delivery_location" required>
         <option value="" disabled selected>Select a location</option>
-        <option value="Location 1">Zone 1: Near Uday Hostel Dharakoti Road, Dharwad</option>
-        <option value="Location 2">Zone 2: Tippu Sultan Circle, Mankilla Main Road, Dharwad</option>
-        <option value="Location 3">Zone 3: Near Jubilee Circle, Beside Kalabhavan, Dharwad</option>
-        <option value="Location 4">Zone 4: Near police station, Navnagar, Hubli</option>
-        <option value="Location 5">Zone 5: Old Income tax road, Vidyanagar, Hubli</option>
-        <option value="Location 6">Zone 6: Old Badami Nagar,Kusugal Road, Keshwapur, Hubli</option>
-        <option value="Location 7">Zone 7: Akshay Park, Gokul Road, Hubli</option>
-        <option value="Location 8">Zone 8: Navanagar Building, J.c.Nagar, Hubli</option>
-        <option value="Location 9">Zone 9: Ayodhya Nagar, Old Hubli, Hubli</option>
-        <option value="Location 10">Zone 10: Old Hubli market building, old Hubli</option>
-        <option value="Location 11">Zone 11: Behind New English School, P.B.Road, Hubli</option>
-        <option value="Location 12">Zone 12: kalabhavan near Jubilee circle, Dharwad</option>
+        <option value="Location 1">Zone 1: HDMC, Hubli</option>
+        <option value="Location 2">Zone 2: HDMC, Dharwad</option>
       </select>
-      <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #181818;" 
-        data-en="Kindly deliver your clothes to the location you have selected above." 
-        data-kn="ದಯವಿಟ್ಟು ನೀವು ಮೇಲ್ನೋಟದಲ್ಲಿ ಆಯ್ಕೆ ಮಾಡಿದ ಸ್ಥಳಕ್ಕೆ ನಿಮ್ಮ ಬಟ್ಟೆಗಳನ್ನು ಒದಗಿಸಿ.">
-        Kindly deliver your clothes to the location you have selected above.
-      </p>
+
       <button type="submit" data-en="Submit" data-kn="ಸಲ್ಲಿಸು">Submit</button>
     </form>
   </div>
@@ -160,85 +126,7 @@
       applyLanguage(lang);
     });
   </script>
-  <script src="static/suggest-location.js"></script>
-  <!-- Info Button -->
-<div style="text-align:center; margin-top: 1rem;">
-  <button class="info-button" onclick="showPopup()">ℹ️ How to Circulate Clothes</button>
-</div>
 
-<script src="suggest-location.js"></script>
-
-<!-- Popup Modal -->
-<!-- Auto-Show Popup Modal -->
-<div class="popup-modal" id="popupModal">
-  <div class="popup-content">
-    <h3>How to Circulate Donated Clothes</h3>
-    <ul>
-      <li>Make sure all clothes are clean, dry, and fresh. No stains, smells, or damp items.</li>
-      <li>Group your clothes into: 1.Men’s Clothing 2.Women’s Clothing 3.Children’s Clothing 4.Winter Wear (jackets, sweaters, etc.)Blankets and 5.Warm Accessories (scarves, gloves, socks, etc.)</li>
-      <li>Please do not donate ripped, stained, or unusable clothes. We want the clothes to bring dignity and warmth to someone in need..</li>
-      <li>Fold and pack clothes in a clean bag or box. Label the outside with the category if possible (e.g., “Women’s Winter Wear”).</li>
-      <li>If you're donating shoes, make sure they’re in good condition and paired properly.</li>
-    </ul>
-    <button class="understand-button" onclick="hidePopup()">I Understand</button>
-  </div>
-</div>
-
-<script>
-  // Auto-detect and suggest nearest center
-  function detectNearestLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-
-        fetch("http://localhost:8080/live-location", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ latitude: lat, longitude: lon })
-        })
-        .then(res => res.text())
-        .then(nearest => {
-          document.getElementById("auto_location").value = nearest;
-
-          // Auto-select the nearest in dropdown if matching
-          const select = document.getElementById("delivery_location");
-          for (let option of select.options) {
-            if (option.text.includes(nearest)) {
-              option.selected = true;
-              break;
-            }
-          }
-        })
-        .catch(() => {
-          document.getElementById("auto_location").value = "Unable to determine.";
-        });
-      }, () => {
-        document.getElementById("auto_location").value = "Permission denied for location.";
-      });
-    } else {
-      document.getElementById("auto_location").value = "Geolocation not supported.";
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    detectNearestLocation();
-  });
-</script>
-<script>
-  // Simulated total clothes collected
-  let collectedCount = 1350; // This would be dynamic if connected to a backend
-  let target = 2000;
-
-  function updateProgressBar() {
-    const percent = Math.min((collectedCount / target) * 100, 100);
-    document.getElementById("progressFill").style.width = percent + "%";
-    document.getElementById("progressText").textContent = `Clothes Collected: ${collectedCount}/${target}`;
-  }
-
-  window.onload = updateProgressBar;
-</script>
+  <script src="suggest-location.js"></script>
 </body>
 </html>
